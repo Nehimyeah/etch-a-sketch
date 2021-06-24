@@ -2,11 +2,25 @@
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat((16, 1fr));
-    row-gap: 5px;
-    column-gap: 5px;
+    row-gap: 1px;
+    column-gap: 1px;
+    height: calc(100vh - 100px);
+    width: 100vh;
+    margin: auto;
 }
 
 #container div {
-    height: 40px;
     border: 1px solid black;
+}
+
+#controls {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+button {
+    padding: 7px 50px;
+    border-radius: 5px;
+    margin-right: 5px;
 }
