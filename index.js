@@ -37,7 +37,7 @@ const clear = document.querySelector('#clear');
 clear.addEventListener('click', (e) => {
     const grids = document.querySelectorAll('#container > div');
     for (let grid of grids) {
-        grid.style.backgroundColor = 'rgb(255, 255, 255)';
+        grid.style.backgroundColor = '';
     }
 });
 
