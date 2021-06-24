@@ -12,11 +12,19 @@ function create(row) {
             let color = e.target.style.backgroundColor;
             let red, green, blue;
 
-            red = Math.floor(Math.random() * 255);
-            green = Math.floor(Math.random() * 255);
-            blue = Math.floor(Math.random() * 255);
-
-
+            if (color === '') {
+                red = Math.floor(Math.random() * 255);
+                green = Math.floor(Math.random() * 255);
+                blue = Math.floor(Math.random() * 255);
+            } else {
+                red = parseInt(color.split('rgb(')[1].split(', ')[0]);
+                green = parseInt(color.split('rgb(')[1].split(', ')[1]);
+                blue = parseInt(color.split('rgb(')[1].split(', ')[2].split(')')[0]);
+                
+                red -= Math.floor(red * 0.1);
+                green -= Math.floor(green * 0.1);
+                blue -= Math.floor(blue * 0.1);
+            }
             e.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
         })
         container.appendChild(grid);    
