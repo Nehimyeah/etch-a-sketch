@@ -9,7 +9,15 @@ function create(row) {
     for (let i = 0; i < row * row; i++) {
         let grid = document.createElement('div');
         grid.addEventListener('mouseover', (e) => {
-            e.target.style.backgroundColor = `rgb(0, 0, 0)`;
+            let color = e.target.style.backgroundColor;
+            let red, green, blue;
+
+            red = Math.floor(Math.random() * 255);
+            green = Math.floor(Math.random() * 255);
+            blue = Math.floor(Math.random() * 255);
+
+
+            e.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
         })
         container.appendChild(grid);    
     }
